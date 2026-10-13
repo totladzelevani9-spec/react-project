@@ -1,0 +1,39 @@
+:root {
+  --ink: #14283a; --sea: #1f5f7a; --brass: #a8782a; --mist: #eef2f4;
+  --line: #cfd8de; --danger: #b3261e; --card: #ffffff;
+  font-family: 'Noto Sans Georgian', system-ui, sans-serif;
+  color: var(--ink);
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--mist); line-height: 1.5; }
+.header { display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; align-items: center;
+  padding: 16px 24px; background: var(--ink); color: #fff; }
+.header h1 { margin: 0; font-size: 1.4rem; }
+.toggle { display: flex; gap: 8px; align-items: center; cursor: pointer; }
+.container { max-width: 640px; margin: 24px auto; padding: 0 16px; }
+.form, .confirmation { background: var(--card); padding: 24px; border: 1px solid var(--line); border-radius: 10px; }
+.form h2, .confirmation h2 { margin-top: 0; }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 520px) { .row { grid-template-columns: 1fr; } }
+.field { display: flex; flex-direction: column; gap: 4px; margin-bottom: 16px; }
+.field label { font-weight: 600; font-size: .9rem; }
+input[type='date'], input[type='number'], select {
+  padding: 10px; border: 1px solid var(--line); border-radius: 6px; font: inherit; }
+input:focus-visible, select:focus-visible, .btn:focus-visible { outline: 3px solid var(--sea); outline-offset: 1px; }
+input[aria-invalid='true'] { border-color: var(--danger); }
+.error { color: var(--danger); margin: 0; font-size: .85rem; }
+.services { border: 1px solid var(--line); border-radius: 6px; padding: 12px; margin: 0 0 16px; display: grid; gap: 8px; }
+.services legend { font-weight: 600; padding: 0 6px; }
+.service { display: flex; gap: 10px; align-items: center; padding: 8px 10px; border-radius: 6px; cursor: pointer; border: 1px solid transparent; }
+.service--on { background: #e6f0f4; border-color: var(--sea); }
+.service__name { flex: 1; }
+.service__price small { color: #5b6b78; }
+.summary { background: var(--mist); border-radius: 8px; padding: 12px 16px; margin-bottom: 16px; }
+.summary h3 { margin: 0 0 8px; }
+.summary dl { margin: 0; }
+.summary dl div { display: flex; justify-content: space-between; padding: 2px 0; }
+.summary dt, .summary dd { margin: 0; }
+.summary__total { border-top: 1px solid var(--line); margin-top: 6px; padding-top: 6px !important; font-weight: 700; color: var(--brass); }
+.muted { color: #5b6b78; margin: 0; }
+.btn { width: 100%; padding: 12px; border: 0; border-radius: 6px; background: var(--sea); color: #fff; font: inherit; font-weight: 600; cursor: pointer; }
+.btn:hover { background: var(--ink); }
